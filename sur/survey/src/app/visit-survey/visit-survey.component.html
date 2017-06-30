@@ -1,0 +1,37 @@
+
+<h4>{{Title}}</h4>
+<!--<div *ngFor="let item of survey">
+{{item.choice}}
+  <!--{{survey[1].choice }}
+</div>-->
+
+<div class="container">
+<div class="row">
+
+
+
+
+    <div class="col-lg-6">
+    <div class="col-xs-12">
+      <div class="margin-20">
+        <h4>Select the best among these!!!</h4>
+      </div >
+      <form #f="ngForm">
+        <div *ngFor="let item of survey">
+      <input type="radio" value="{{item.choice}}" name="food" [(ngModel)]="myFood"> {{item.choice}}
+          
+        </div>
+      <!--<input type="radio" value="beef" name="food" [(ngModel)]="myFood"> Beef
+      <input type="radio" value="lamb" name="food" [(ngModel)]="myFood"> Lamb
+      <input type="radio" value="fish" name="food" [(ngModel)]="myFood"> Fish-->
+      <button (click)="giveVote(myFood)">submit</button>
+    </form>
+    
+    <p>Form value: {{ f.value | json }}</p>  <!-- {food: 'lamb' } -->
+    <p>myFood value: {{ myFood }}</p>  <!-- 'lamb' -->
+    </div>
+  </div>
+
+
+</div>
+</div>
